@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d5c63" />
+  <title>GlicoGuia | Entenda sua glicemia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <a class="brand" href="#inicio" aria-label="GlicoGuia, início">
+        <span class="brand-mark" aria-hidden="true">⌁</span>
+        <span>Glico<span>Guia</span></span>
+      </a>
+      <div class="hero-copy">
+        <p class="eyebrow">Seu resultado em linguagem clara</p>
+        <h1>Vamos entender sua <em>glicemia</em> juntos.</h1>
+        <p class="intro">Informe a leitura do aparelho. Em poucos segundos, você recebe uma explicação simples, cuidados
+          iniciais e sinais para procurar ajuda.</p>
+      </div>
+      <div class="notice" role="note"><span aria-hidden="true">♥</span> Este guia informa, mas não substitui uma
+        consulta ou exame laboratorial.</div>
+    </header>
+
+    <section class="content-grid" id="inicio">
+      <form class="card form-card" id="glucose-form" novalidate>
+        <div class="section-heading">
+          <span class="step">1</span>
+          <div>
+            <h2>Conte sobre a medição</h2>
+            <p>Preencha com calma. Campos com * são necessários.</p>
+          </div>
+        </div>
+
+        <label for="glucose">Glicemia *</label>
+        <div class="input-with-unit">
+          <input id="glucose" name="glucose" type="number" inputmode="decimal" min="20" max="700" step="1"
+            placeholder="Ex.: 98" required aria-describedby="glucose-help" />
+          <span>mg/dL</span>
+        </div>
+        <small id="glucose-help">Use o valor mostrado em seu glicosímetro.</small>
+
+        <fieldset>
+          <legend>Quando você mediu? *</legend>
+          <div class="choice-group">
+            <label class="choice"><input type="radio" name="context" value="fasting" checked /><span><b>Em
+                  jejum</b><small>Sem comer por pelo menos 8 horas</small></span></label>
+            <label class="choice"><input type="radio" name="context" value="after-meal" /><span><b>2 horas após iniciar
+                  uma refeição</b><small>Ajuda a interpretar a leitura</small></span></label>
+            <label class="choice"><input type="radio" name="context" value="random" /><span><b>Em outro
+                  momento</b><small>Sem jejum ou horário definido</small></span></label>
+          </div>
+        </fieldset>
+
+        <div class="two-columns">
+          <div><label for="age">Idade *</label><input id="age" name="age" type="number" inputmode="numeric" min="1"
+              max="120" placeholder="Ex.: 42" required /></div>
+          <div><label for="weight">Peso</label>
+            <div class="input-with-unit compact"><input id="weight" name="weight" type="number" inputmode="decimal"
+                min="2" max="500" step="0.1" placeholder="Ex.: 70" /><span>kg</span></div>
+          </div>
+        </div>
+
+        <fieldset>
+          <legend>Você faz atividade física com frequência?</legend>
+          <div class="inline-choices">
+            <label><input type="radio" name="activity" value="yes" /><span>Sim</span></label>
+            <label><input type="radio" name="activity" value="no" /><span>Não</span></label>
+            <label><input type="radio" name="activity" value="sometimes" checked /><span>Às vezes</span></label>
+          </div>
+        </fieldset>
+
+        <p class="form-error" id="form-error" role="alert" aria-live="polite"></p>
+        <button type="submit" class="primary-button">Entender minha glicemia <span aria-hidden="true">→</span></button>
+      </form>
+
+      <aside class="side-column">
+        <section class="card reassurance">
+          <span class="icon-circle" aria-hidden="true">✓</span>
+          <h2>Sem julgamentos, só cuidado.</h2>
+          <p>Uma leitura isolada não confirma diabetes. Os resultados podem mudar conforme a refeição, medicamentos,
+            exercício e o aparelho utilizado.</p>
+        </section>
+        <section class="quick-help" aria-label="Quando buscar urgência">
+          <p class="eyebrow">Procure urgência agora se</p>
+          <p>houver desmaio, convulsão, confusão importante, dificuldade para respirar, vômitos persistentes ou
+            incapacidade de engolir.</p>
+        </section>
+      </aside>
+    </section>
+
+    <section id="result" class="result-section" hidden aria-live="polite" tabindex="-1"></section>
+
+    <section class="understanding card">
+      <div>
+        <p class="eyebrow">Como lemos os números</p>
+        <h2>Faixas de referência</h2>
+      </div>
+      <div class="ranges">
+        <div><span class="dot low"></span><b>Abaixo de 70</b><small>glicose baixa</small></div>
+        <div><span class="dot good"></span><b>70–99</b><small>em jejum: esperado</small></div>
+        <div><span class="dot attention"></span><b>100–125</b><small>em jejum: pré-diabetes</small></div>
+        <div><span class="dot high"></span><b>126 ou mais</b><small>em jejum: precisa investigar</small></div>
+      </div>
+      <p class="fine-print">As faixas são referências para adultos e especialmente para glicemia de jejum. Crianças,
+        gestantes, pessoas em tratamento e cada contexto clínico podem ter metas diferentes.</p>
+    </section>
+  </main>
+  <footer>
+    <p>GlicoGuia é uma ferramenta educativa. Em caso de dúvida, alteração repetida ou sintomas, procure um(a)
+      profissional de saúde.</p>
+    <p>Referências: American Diabetes Association (critérios de glicemia) e CDC (hipoglicemia e regra 15-15).</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+
+</html>
