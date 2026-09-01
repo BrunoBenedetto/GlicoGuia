@@ -431,7 +431,8 @@ legend {
 .action-box {
     border-radius: 12px;
     padding: 17px;
-    background: #f3f7f4
+    background: #f7fbf8;
+    color: var(--ink)
 }
 
 .action-box h3 {
@@ -459,50 +460,56 @@ legend {
 
 .result-card.low {
     border-color: var(--low);
-    background: var(--low);
+    background: #1d668f;
     color: #f7fbff
 }
 
-.result-card.low .eyebrow,
-.result-card.low .result-summary,
-.result-card.low .personal-note {
-    color: #e8f5ff
-}
-
-.result-card.low .personal-note {
-    border-top-color: rgba(255, 255, 255, .3)
-}
-
-.result-card.low .result-pill {
-    background: #e6f2fb;
-    color: #19618c
-}
-
 .result-card.good {
-    border-color: var(--good)
-}
-
-.result-card.good .result-pill {
-    background: #e5f3eb;
-    color: #216849
+    border-color: var(--good);
+    background: #256e51;
+    color: #f5fffa
 }
 
 .result-card.attention {
-    border-color: var(--attention)
-}
-
-.result-card.attention .result-pill {
-    background: #fff2df;
-    color: #9a5d12
+    border-color: var(--attention);
+    background: #a55f13;
+    color: #fffaf3
 }
 
 .result-card.high {
-    border-color: var(--high)
+    border-color: var(--high);
+    background: #a64238;
+    color: #fff8f6
+}
+
+.result-card .eyebrow,
+.result-card .result-summary,
+.result-card .personal-note {
+    color: rgba(255, 255, 255, .9)
+}
+
+.result-card .personal-note {
+    border-top-color: rgba(255, 255, 255, .35)
+}
+
+.result-card.low .result-pill {
+    background: #e6f5ff;
+    color: #155b83
+}
+
+.result-card.good .result-pill {
+    background: #e8f8ee;
+    color: #1e6548
+}
+
+.result-card.attention .result-pill {
+    background: #fff4e4;
+    color: #8b4c08
 }
 
 .result-card.high .result-pill {
-    background: #fdeae7;
-    color: #a93b31
+    background: #fff0ed;
+    color: #963329
 }
 
 .personal-note {
@@ -543,19 +550,19 @@ legend {
     margin-right: 5px
 }
 
-.low {
+.dot.low {
     background: var(--low)
 }
 
-.good {
+.dot.good {
     background: var(--good)
 }
 
-.attention {
+.dot.attention {
     background: var(--attention)
 }
 
-.high {
+.dot.high {
     background: var(--high)
 }
 
