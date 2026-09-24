@@ -9,6 +9,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .personal-contacts { margin-top: 23px; }
+      .personal-contacts h3 { color: var(--teal); }
+      .empty-contact { color: var(--muted); font-size: .84rem; margin: 8px 0; }
+      .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 13px; }
+      .contact-form label { color: var(--muted); font-size: .72rem; font-weight: 700; }
+      .contact-form input { width: 100%; margin-top: 4px; border: 1.5px solid #b8cbc2; border-radius: 10px; padding: 10px; font: inherit; color: var(--ink); background: white; }
+      .contact-form .button, .contact-form .form-error { grid-column: 1 / -1; }
+      .contact-number { text-decoration: none; text-align: center; }
+      .theme-button { width: 100%; padding: 13px; border: 1.5px solid var(--teal); border-radius: 13px; background: #e5f3ee; color: var(--teal); cursor: pointer; font: 700 .92rem "DM Sans", sans-serif; }
+      body.dark-mode { --ink: #edf7f4; --muted: #b8cbc5; --paper: #183a3d; --line: #426060; background: #09282c; }
+      body.dark-mode .device { border-color: #4d6462; background: #0c2c2e; }
+      body.dark-mode .menu-button, body.dark-mode .test-meta div, body.dark-mode .key, body.dark-mode .contact-card, body.dark-mode .advice-box { background: #24494b; color: var(--ink); }
+      body.dark-mode .menu-button:hover, body.dark-mode .key:hover { background: #315b5d; }
+      body.dark-mode .menu-icon, body.dark-mode .back-button, body.dark-mode .button.secondary, body.dark-mode .theme-button { background: #315d5c; color: #e5f6f0; }
+      body.dark-mode .context-option, body.dark-mode .history-item, body.dark-mode .contact-form input, body.dark-mode .setting select, body.dark-mode .profile-grid input { background: #23484a; color: var(--ink); }
+      body.dark-mode .context-option:has(input:checked) { background: #275654; }
+      body.dark-mode .advice-box.urgent, body.dark-mode .warning { background: #4d302d; color: #ffe7e1; }
+      body.dark-mode .info-strip { background: #294f4d; color: #daf1e8; }
+      body.dark-mode .privacy-note { color: #b8cbc5; }
+      .app-footer { position: fixed; right: 14px; bottom: 12px; color: #617977; font-size: .75rem; }
+      .app-footer a { color: var(--teal); font-weight: 700; }
+      body.dark-mode .app-footer { color: #b8cbc5; }
+      body.dark-mode .app-footer a { color: #9de0c0; }
+      @media (max-width: 500px) { .app-footer { position: static; display: block; text-align: center; padding: 8px 14px; background: #edf2ee; } body.dark-mode .app-footer { background: #09282c; } }
+    </style>
   </head>
   <body>
     <main class="device" aria-label="Simulador de glicosímetro GlicoGuia">
@@ -23,6 +49,7 @@
       </section>
       <div class="device-bottom" aria-hidden="true"><span class="home-indicator"></span></div>
     </main>
+    <footer class="app-footer">Desenvolvido por Bruno Benedetto · <a href="https://github.com/BrunoBenedetto" target="_blank" rel="noopener noreferrer">GitHub</a></footer>
     <p class="privacy-note">Seus testes ficam salvos apenas neste navegador.</p>
     <script src="app.js"></script>
   </body>
